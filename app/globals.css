@@ -1,0 +1,29 @@
+@import "@fontsource/dotgothic16";
+@import "tailwindcss";
+
+@font-face {
+  font-family: "PixelFont";
+  src: url("/fonts/PixelFont.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --color-rpg-bg: #000000;
+  --color-rpg-fg: #f5f5f5;
+  --font-rpg: "DotGothic16", "PixelFont", "MS Gothic", "Courier New", monospace;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-rpg-bg);
+  color: var(--color-rpg-fg);
+  font-family: var(--font-rpg);
+  letter-spacing: 0.02em;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+}
