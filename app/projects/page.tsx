@@ -1,7 +1,7 @@
 ﻿import Link from "next/link";
 
 import { Window } from "@/components/Window";
-import { projects } from "@/lib/projects";
+import { projectsByDateDesc } from "@/lib/projects";
 
 export default function ProjectsIndexPage() {
   return (
@@ -9,7 +9,7 @@ export default function ProjectsIndexPage() {
       <Window className="max-w-3xl">
         <h1 className="text-2xl md:text-3xl">Projects</h1>
         <ul className="mt-6 space-y-2">
-          {projects.map((project) => (
+          {projectsByDateDesc.map((project) => (
             <li key={project.slug}>
               <Link href={`/projects/${project.slug}`} className="underline underline-offset-4">
                 {project.title}

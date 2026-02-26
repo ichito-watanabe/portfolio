@@ -39,18 +39,75 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   return (
     <main className="flex min-h-screen items-center justify-center px-4 py-8">
       <Window>
-        <div className="relative mb-6 w-full overflow-hidden rounded border border-white/50 aspect-video">
-          <Image
-            src={project.imagePath}
-            alt={`${project.title} image`}
-            fill
-            sizes="(max-width: 768px) 100vw, 768px"
-            className="object-cover"
-          />
-        </div>
-
+        {project.mainImagePath ? (
+          <div className="relative mb-6 w-full overflow-hidden rounded border border-white/50 aspect-video">
+            <Image
+              src={project.mainImagePath}
+              alt={`${project.title} image`}
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
+            />
+          </div>
+        ) : null}
         <h1 className="text-2xl md:text-3xl">{project.title}</h1>
+        {project.dateLabel ? <p className="mt-2 text-xs text-white/80">{project.dateLabel}</p> : null}
+        {project.githubUrl ? (
+          <p className="mt-2 text-xs">
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4"
+            >
+              GitHub
+            </a>
+          </p>
+        ) : null}
+        {project.pdfLinks && project.pdfLinks.length > 0 ? (
+          <div className="mt-2 text-xs">
+            <p>PDF資料</p>
+            <ul className="mt-1 space-y-1">
+              {project.pdfLinks.map((pdf) => (
+                <li key={pdf.href}>
+                  <a
+                    href={pdf.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-4"
+                  >
+                    {pdf.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
         <p className="mt-4 text-sm leading-relaxed md:text-base">{project.description}</p>
+        <section className="mt-6 space-y-4">
+          {project.contentBlocks.map((block, index) =>
+            block.type === "text" ? (
+              <p key={`text-${index}`} className="text-sm leading-relaxed md:text-base">
+                {block.text}
+              </p>
+            ) : (
+              <figure key={`image-${index}`} className="space-y-2">
+                <div className="relative w-full overflow-hidden rounded border border-white/40 aspect-video">
+                  <Image
+                    src={block.src}
+                    alt={block.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 768px"
+                    className="object-cover"
+                  />
+                </div>
+                {block.caption ? (
+                  <figcaption className="text-xs text-white/80">{block.caption}</figcaption>
+                ) : null}
+              </figure>
+            ),
+          )}
+        </section>
 
         <section className="mt-6 border-t border-white/40 pt-4">
           <h2 className="text-base md:text-lg">Tech Stack</h2>
