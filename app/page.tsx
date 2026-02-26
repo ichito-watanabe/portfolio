@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { CommandMenu } from "@/components/CommandMenu";
 import { Typewriter } from "@/components/Typewriter";
 import { Window } from "@/components/Window";
-import { projects } from "@/lib/projects";
+import { projectsByDateDesc } from "@/lib/projects";
 
 const introText = "Welcome to Ichito Portfolio";
 const profileImagePath = "/images/profile_img.png";
@@ -17,7 +17,7 @@ const HEADER_GAP = 16;
 const IMAGE_SCALE = 0.75;
 
 export default function Home() {
-  const menuItems = projects.map((project) => ({
+  const menuItems = projectsByDateDesc.map((project) => ({
     label: project.title,
     href: `/projects/${project.slug}`,
   }));
@@ -118,7 +118,7 @@ export default function Home() {
         <section className="mt-8 border-t border-white/40 pt-4">
           <p className="mb-3 text-sm">Projects</p>
           <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {projects.map((project) => (
+            {projectsByDateDesc.map((project) => (
               <li key={project.slug}>
                 <Link
                   href={`/projects/${project.slug}`}
@@ -133,7 +133,12 @@ export default function Home() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="px-3 py-2 text-sm">{project.title}</div>
+                  <div className="px-3 py-2">
+                    <p className="text-sm">{project.title}</p>
+                    {project.dateLabel ? (
+                      <p className="mt-1 text-xs text-white/80">{project.dateLabel}</p>
+                    ) : null}
+                  </div>
                 </Link>
               </li>
             ))}
