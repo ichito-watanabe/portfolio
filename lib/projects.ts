@@ -182,7 +182,7 @@ export const projects: Project[] = [
     title: "ローカルイベント AUSPICE vol.3 開催",
     slug: "local-event-auspice-vol3",
     dateLabel: "2025-05-11",
-    description: "新規来場者の拡大と体験価値の向上をテーマに、2フロア構成でAUSPICE vol.3を開催しました。",
+    description: "新規来場者の拡大と体験価値の向上をテーマに、AUSPICE vol.3を開催しました。",
     techStack: ["Community", "Facilitation", "Sponsorship", "Operation"],
     mainImagePath: "/images/auspis_vol3_1.jpg",
     contentBlocks: [
@@ -271,7 +271,7 @@ export const projects: Project[] = [
     title: "ダンスイベント THE BeeHive vol.2 開催",
     slug: "dance-event-beehive-vol2",
     dateLabel: "2026-01-09",
-    description: "Vol.1の学びをもとに、BeeHive vol.2を開催し、内容を大きく進化させました。",
+    description: "進化と反省がたくさんあったVol.2でした！",
     techStack: ["Planning", "Direction", "Promotion", "Operation"],
     mainImagePath: "/images/beehive_vol2_1.jpg",
     contentBlocks: [
@@ -322,7 +322,7 @@ export const projects: Project[] = [
     dateLabel: "2026-02-13",
     githubUrl: "https://github.com/ichito-watanabe/SSC2025.git",
     description:
-      "SIGNATEの自然言語処理コンペにチームで参加し、最終3位に入賞しました。",
+      "SIGNATEの自然言語処理コンペにチームで参加し、最終3位に入賞しました！",
     techStack: ["Python", "LLM", "埋め込み検索", "テキスト類似度"],
     mainImagePath: "/images/LLM_1.png",
     contentBlocks: [
