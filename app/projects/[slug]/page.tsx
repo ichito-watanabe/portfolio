@@ -90,7 +90,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
               <p key={`text-${index}`} className="text-sm leading-relaxed md:text-base">
                 {block.text}
               </p>
-            ) : (
+            ) : block.type === "image" ? (
               <figure key={`image-${index}`} className="space-y-2">
                 <div className="relative w-full overflow-hidden rounded border border-white/40 aspect-video">
                   <Image
@@ -103,6 +103,48 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                 </div>
                 {block.caption ? (
                   <figcaption className="text-xs text-white/80">{block.caption}</figcaption>
+                ) : null}
+              </figure>
+            ) : block.type === "video" ? (
+              <figure key={`video-${index}`} className="space-y-2">
+                <video
+                  className="w-full rounded border border-white/40 aspect-video bg-black"
+                  controls
+                  preload="metadata"
+                  poster={block.poster}
+                  playsInline
+                >
+                  <source src={block.src} />
+                  お使いのブラウザでは動画を再生できません。
+                </video>
+                {block.caption ? (
+                  <figcaption className="text-xs text-white/80">{block.caption}</figcaption>
+                ) : null}
+              </figure>
+            ) : (
+              <figure key={`youtube-${index}`} className="space-y-2">
+                <div className="w-full overflow-hidden rounded border border-white/40 aspect-video bg-black">
+                  <iframe
+                    src={block.embedUrl}
+                    title={block.caption ?? "YouTube video"}
+                    className="h-full w-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                {block.caption ? (
+                  <figcaption className="text-xs text-white/80">{block.caption}</figcaption>
+                ) : null}
+                {block.watchUrl ? (
+                  <a
+                    href={block.watchUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block text-xs underline underline-offset-4"
+                  >
+                    YouTubeで開く
+                  </a>
                 ) : null}
               </figure>
             ),

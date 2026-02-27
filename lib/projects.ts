@@ -8,8 +8,19 @@
       src: string;
       alt: string;
       caption?: string;
+    }
+  | {
+      type: "video";
+      src: string;
+      poster?: string;
+      caption?: string;
+    }
+  | {
+      type: "youtube";
+      embedUrl: string;
+      watchUrl?: string;
+      caption?: string;
     };
-
 export type Project = {
   title: string;
   slug:
@@ -124,16 +135,46 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "ダンスイベント BeeHive vol.1 開催",
+    title: "ダンスイベント THE BeeHive vol.1 開催",
     slug: "dance-event-beehive-vol1",
     dateLabel: "2025-01-11",
-    description: "BeeHive vol.1 を企画・開催し、出演者調整から当日運営まで担当しました。",
+    description: "地元・諏訪の小中学生向けに、自由に踊れるダンスイベントを開催しました。",
     techStack: ["Planning", "Design", "Marketing", "Operation"],
     mainImagePath: "/images/beehive_vol1_1.jpg",
     contentBlocks: [
       {
         type: "text",
-        text: "会場調整、出演者連携、集客導線の設計を行い、当日の運営オペレーションを主導しました。",
+        text: "長岡でのローカルイベントを経験して、「自分の生まれ育った町にも何か還元したい」と思うようになりました。そこで、地元・長野県諏訪のダンススクールに通う小中学生を対象に、ダンスイベントを開催しました。",
+      },
+      {
+        type: "text",
+        text: "コンセプトはシンプルで、「振り付けもジャンルも関係なく、誰でも自由に踊れる空間」。",
+      },
+      {
+        type: "text",
+        text: "自分が小さいころは、どこか周りの目を気にしてしまって、本当にやりたい踊りや即興のダンスができなかった経験があります。だからこそ、クラブハウスのような空間で、誰もが自由に表現できる場をつくりたいと思いました。",
+      },
+      {
+        type: "text",
+        text: "正直、「みんな本当に自由に踊ってくれるかな…？」という不安もありました。でも実際に始まってみると、想像以上にそれぞれが自分らしく踊っていて、コンセプトに沿った、本当にいい空間になったと感じています。",
+      },
+      {
+        type: "text",
+        text: "イベント後には、SNSに自分のダンス動画を日々アップする子が出てきたり、振り付けなしで即興で踊るフリーダンスを積極的に挑戦する子が増えたりと、目に見える変化も生まれました。",
+      },
+      {
+        type: "text",
+        text: "あの空間が、誰かにとって「ちょっと一歩踏み出すきっかけ」になっていたらうれしいなと、今でも思っています。",
+      },
+      {
+        type: "video",
+        src: "/images/beehive_vol1_2.MOV",
+        poster: "/images/beehive_vol1_1.jpg",
+        caption: "BeeHive vol.1 の動画（押すと再生）",
+      },
+      {
+        type: "text",
+        text: "みんなそれぞれが思い思いのダンスを踊っていて楽しい空間にすることができました。僕も踊りまくりました～",
       },
     ],
   },
@@ -227,16 +268,51 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "ダンスイベント BeeHive vol.2 開催",
+    title: "ダンスイベント THE BeeHive vol.2 開催",
     slug: "dance-event-beehive-vol2",
     dateLabel: "2026-01-09",
-    description: "BeeHive vol.2 を開催し、vol.1 の改善点を反映して運営品質を向上させました。",
+    description: "Vol.1の学びをもとに、BeeHive vol.2を開催し、内容を大きく進化させました。",
     techStack: ["Planning", "Direction", "Promotion", "Operation"],
     mainImagePath: "/images/beehive_vol2_1.jpg",
     contentBlocks: [
       {
         type: "text",
-        text: "前回の反省をもとに、告知導線・役割分担・当日進行を見直し、よりスムーズなイベント進行を実現しました。",
+        text: "Vol.1のあと、スタジオの先生や生徒さんから「楽しかったからまたやってよ！」と声をいただき、THE BEE HIVE Vol.2を開催しました。",
+      },
+      {
+        type: "text",
+        text: "今回はさらにパワーアップして、実際にクラブでプレイしているDJをお呼びし、ショーケースの時間も用意。出演する子どもたちには、選曲・編曲・振り付けまで自分たちで考えてもらい、与えられたダンスではなく、自分たちでつくるダンスを発表してもらいました。イベントとしての完成度は確実に上がったと思います。",
+      },
+      {
+        type: "text",
+        text: "ただ、正直に言うと悔しさも残りました。前回参加してくれた子はほとんど戻ってきてくれたのですが、新規のお客さんをあまり呼び込めなかったんです。",
+      },
+      {
+        type: "text",
+        text: "振り返ってみると、一番の反省点は「Vol.1の良さをちゃんと外に伝えられていなかったこと」だと感じました。Vol.1に来てくれた子たちは、もともとダンスが大好きで、「こんなイベントあるなら行ってみよう！」と思える子たちでした。でも本当は、「自分あんまりうまくないし…」「即興とか恥ずかしいし…」って思っている子にこそ来てほしかった。",
+      },
+      {
+        type: "text",
+        text: "Vol.1の雰囲気は本当に最高だったのに、その空気感を言葉や写真だけでは伝えきれていなかった。今回はそこが足りなかったと痛感しました。",
+      },
+      {
+        type: "text",
+        text: "そこでVol.3に向けて、イベント中の様子を動画でしっかり撮影し、あとからまとめてアップロードすることに決めました。このイベントの空気や楽しさをちゃんと可視化して、次につなげたいと思っています。",
+      },
+      {
+        type: "text",
+        text: "進化はできた。でも、届けきれなかった。その悔しさを、次の一歩のエネルギーにします。",
+      },
+      {
+        type: "youtube",
+        embedUrl: "https://www.youtube.com/embed/DWbkvmSJl94",
+        watchUrl: "https://www.youtube.com/watch?v=DWbkvmSJl94",
+
+        caption: "BeeHive vol.2 ダイジェスト（YouTube）",
+      },
+      {
+        type: "text",
+        text: "1分30秒ぐらいの、大学生になり体力がなくなって疲れ果てて座っているのが僕です。",
       },
     ],
   },
@@ -288,3 +364,4 @@ export const projectsByDateDesc = [...projects].sort(
 );
 
 export const projectBySlug = new Map(projects.map((project) => [project.slug, project]));
+
