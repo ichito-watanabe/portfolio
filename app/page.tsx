@@ -104,7 +104,7 @@ export default function Home() {
             思いついたらとりあえず手を動かすタイプです。
           </p>
           <p className="text-sm leading-relaxed md:text-base">
-            ダンスもAIも、自分の中ではわりと同じで、「表現する」ことと「仕組みを作る」ことを楽しんでいます。
+            自分が誰かの行動の「きっかけ」になれたら，その人の人生を少しでも楽しいものにできたら．自分に「きっかけ」をくれた友人のようになれたらいいなと思っています．
           </p>
           <div className="rounded border border-white/40 px-3 py-2">
             <p className="text-sm md:text-base">モットー：「きっかけ」を作る！</p>
