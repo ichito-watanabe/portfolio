@@ -26,6 +26,7 @@ export type Project = {
   slug:
     | "research"
     | "llm-competition"
+    | "pollen-excuse-generator"
     | "dance-event-beehive-vol1"
     | "dance-event-beehive-vol2"
     | "local-event-auspice-vol1"
@@ -348,6 +349,51 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    title: "花粉言い訳エクスキューズジェネレーター",
+    slug: "pollen-excuse-generator",
+    dateLabel: "2026-03-15",
+    githubUrl: "https://github.com/toriaezu-yattemitai",
+    description:
+      "花粉症の言い訳を、位置情報と花粉指数を根拠に生成するアプリを5人チームで開発し、技育CAMPでサポーターズ賞を受賞しました。",
+    techStack: [
+      "FastAPI",
+      "Python",
+      "Next.js",
+      "TypeScript",
+      "Gemini 3 Flash",
+      "Google Pollen API",
+      "Google Geocoding API",
+      "Upstash Redis",
+    ],
+    mainImagePath: "/images/hackason_1.png",
+    contentBlocks: [
+      {
+        type: "text",
+        text: "花粉症を理由にした行動や体調不良の「言い訳」を生成するアプリ「花粉言い訳エクスキューズジェネレーター」を、5人チームで約2週間かけて開発しました。技育CAMPのハッカソンで制作し、最終的にサポーターズ賞をいただきました。",
+      },
+      {
+        type: "text",
+        text: "私はバックエンド担当として、FastAPIを用いたAPI設計と外部サービス連携を主に担当しました。IPアドレスから市区町村を推定する位置情報API、Google Pollen API、Google Geocoding API、Gemini 3 Flash APIを組み合わせ、ユーザー入力から出力までをつなぐ処理を実装しました。",
+      },
+      {
+        type: "text",
+        text: "加えて、APIキーの発行や認証設定、課金設定などの環境構築も担当しました。短期間のハッカソンでは、実装だけでなく外部サービスをすぐに使える状態まで整えることが重要だと考え、開発初期に基盤部分を先回りして進めました。",
+      },
+      {
+        type: "text",
+        text: "設計面では、複数のAPIを組み合わせて利用するためのスキーマ設計も提案し、実際のシステム設計に採用されました。位置情報、花粉指数、ユーザー入力、LLMの出力をどうつなぐかを明確にしたことで、フロントエンド側との連携もしやすくなり、役割分担のある開発を進めやすくできました。",
+      },
+      {
+        type: "text",
+        text: "このアプリでこだわったのは、ユーザーの入力だけに頼らず、位置情報や花粉指数といった客観的なデータを組み合わせて「エビデンス付きの言い訳」を生成することです。生成AIの面白さに現実のデータを掛け合わせることで、ただ面白いだけでなく、思わず納得してしまう説得力のある出力を目指しました。",
+      },
+      {
+        type: "text",
+        text: "また、フロントエンド担当のメンバーがUIや体験設計を整理してくれたことで、バックエンドで集めた情報を分かりやすく見せる形まで落とし込めました。チーム開発を通して、自分の担当をやり切るだけでなく、他メンバーが実装しやすい構造をつくることの重要性を学びました。",
+      },
+    ],
+  },
 ];
 
 const dateToEpoch = (dateLabel?: string) => {
@@ -364,4 +410,3 @@ export const projectsByDateDesc = [...projects].sort(
 );
 
 export const projectBySlug = new Map(projects.map((project) => [project.slug, project]));
-
