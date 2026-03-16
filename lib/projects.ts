@@ -41,6 +41,7 @@ export type Project = {
     href: string;
   }[];
   mainImagePath?: string;
+  mainPdfPath?: string;
   contentBlocks: ProjectBlock[];
 };
 
@@ -366,6 +367,7 @@ export const projects: Project[] = [
       "Google Geocoding API",
       "Upstash Redis",
     ],
+    mainPdfPath: "/images/hackason_1.pdf",
     mainImagePath: "/images/hackason_1.png",
     contentBlocks: [
       {
@@ -387,6 +389,12 @@ export const projects: Project[] = [
       {
         type: "text",
         text: "このアプリで一番こだわったのは、ユーザーの入力だけに頼らず、位置情報や花粉指数みたいな客観的なデータも組み合わせて「エビデンス付きの言い訳」を生成することです！生成AIの面白さに現実のデータを掛け合わせることで、ただネタっぽいだけじゃなくて、思わず『それは仕方ないかも...！』と思ってしまうような説得力のある出力を目指しました。",
+      },
+      {
+        type: "image",
+        src: "/images/hackason_1.png",
+        alt: "花粉言い訳エクスキューズジェネレーターの実際の画面",
+        caption: "実際のアプリ画面です！花粉情報をもとに、言い訳が生成される流れが分かるようになっています。",
       },
       {
         type: "text",

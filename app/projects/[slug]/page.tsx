@@ -39,7 +39,28 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   return (
     <main className="flex min-h-screen items-center justify-center px-4 py-8">
       <Window>
-        {project.mainImagePath ? (
+        {project.mainPdfPath ? (
+          <figure className="mb-6 space-y-2">
+            <div className="w-full overflow-hidden rounded border border-white/50 bg-white h-[60vh] md:h-[70vh]">
+              <iframe
+                src={project.mainPdfPath}
+                title={`${project.title} PDF`}
+                className="h-full w-full"
+              />
+            </div>
+            <figcaption className="text-xs text-white/80">
+              発表資料（PDF）
+              <a
+                href={project.mainPdfPath}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2 underline underline-offset-4"
+              >
+                別タブで開く
+              </a>
+            </figcaption>
+          </figure>
+        ) : project.mainImagePath ? (
           <div className="relative mb-6 w-full overflow-hidden rounded border border-white/50 aspect-video">
             <Image
               src={project.mainImagePath}
