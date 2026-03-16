@@ -357,7 +357,6 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/toriaezu-yattemitai",
     description:
       "花粉症のつらさを、位置情報と花粉指数をもとに“根拠のある言い訳”へ変えるアプリを5人チームで開発し、技育CAMPでサポーターズ賞をいただきました！",
-    pdfLinks: [{ label: "発表資料 (PDF)", href: "/images/hackason_1.pdf" }],
     techStack: [
       "FastAPI",
       "Python",
