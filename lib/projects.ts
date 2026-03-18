@@ -351,7 +351,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "花粉言い訳エクスキューズジェネレーター",
+    title: "技育CAMPにてサポーターズ賞をいただきました！",
     slug: "pollen-excuse-generator",
     dateLabel: "2026-03-15",
     githubUrl: "https://github.com/toriaezu-yattemitai",
