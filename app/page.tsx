@@ -92,7 +92,7 @@ export default function Home() {
         <section className="mt-8 border-t border-white/40 pt-4 space-y-3">
           <h2 className="text-base md:text-lg">自己紹介</h2>
           <p className="text-sm leading-relaxed md:text-base">
-            こんにちは！2025年2月現在、長岡技術科学大学4年です。春からそのまま大学院に進学します。
+            こんにちは！2025年3月現在、長岡技術科学大学4年です。春からそのまま大学院に進学します。
           </p>
           <p className="text-sm leading-relaxed md:text-base">
             地元は長野県の諏訪市という場所で，幼少期からダンスを習っていました！
