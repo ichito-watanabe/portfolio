@@ -9,9 +9,17 @@ import { Typewriter } from "@/components/Typewriter";
 import { Window } from "@/components/Window";
 import { projectsByDateDesc } from "@/lib/projects";
 
-const introText = "Welcome to Ichito Portfolio";
+const introTitle = "Welcome to Ichito Portfolio";
+const introProfileLines = [
+  "出身地 ： 諏訪市",
+  "大学 ： 長岡技術科学大学",
+  "趣味 ： ダンス，麻雀",
+] as const;
+const introLines = [introTitle, ...introProfileLines] as const;
+const introWidthReference = introTitle;
 const profileImagePath = "/images/profile_img.png";
 const lastUpdatedAt = "2026-03-21";
+const TYPEWRITER_SPEED_MS = 65;
 const MIN_IMAGE_SIZE = 80;
 const MAX_IMAGE_SIZE = 440;
 const HEADER_GAP = 16;
@@ -32,6 +40,18 @@ export default function Home() {
   const headerRef = useRef<HTMLDivElement | null>(null);
   const titleMeasureRef = useRef<HTMLParagraphElement | null>(null);
   const [imageSize, setImageSize] = useState(MIN_IMAGE_SIZE);
+  const [introBlockMaxWidth, setIntroBlockMaxWidth] = useState<number | null>(null);
+  const [activeIntroIndex, setActiveIntroIndex] = useState(0);
+
+  const handleIntroComplete = (lineIndex: number) => {
+    setActiveIntroIndex((current) => {
+      if (current !== lineIndex || current >= introLines.length - 1) {
+        return current;
+      }
+
+      return current + 1;
+    });
+  };
 
   useEffect(() => {
     const updateImageSize = () => {
@@ -43,11 +63,12 @@ export default function Home() {
       }
 
       const headerWidth = headerEl.getBoundingClientRect().width;
-      const titleWidth = titleEl.getBoundingClientRect().width;
+      const titleWidth = Math.ceil(titleEl.getBoundingClientRect().width);
       const available = Math.floor(headerWidth - titleWidth - HEADER_GAP);
       const baseSize = Math.max(MIN_IMAGE_SIZE, Math.min(MAX_IMAGE_SIZE, available));
       const nextSize = Math.max(MIN_IMAGE_SIZE, Math.floor(baseSize * IMAGE_SCALE));
 
+      setIntroBlockMaxWidth(titleWidth);
       setImageSize(nextSize);
     };
 
@@ -74,11 +95,22 @@ export default function Home() {
             aria-hidden
             className="pointer-events-none invisible absolute left-0 top-0 whitespace-nowrap text-2xl md:text-3xl"
           >
-            {introText}
+            {introWidthReference}
           </p>
 
-          <div className="min-w-0 flex-1">
-            <Typewriter text={introText} speedMs={65} className="text-2xl md:text-3xl" />
+          <div
+            className="min-w-0 flex-1 space-y-1 md:space-y-2"
+            style={introBlockMaxWidth ? { maxWidth: `${introBlockMaxWidth}px` } : undefined}
+          >
+            {introLines.slice(0, activeIntroIndex + 1).map((line, index) => (
+              <Typewriter
+                key={line}
+                text={line}
+                speedMs={TYPEWRITER_SPEED_MS}
+                className={index === 0 ? "text-2xl md:text-3xl" : "text-lg md:text-2xl"}
+                onComplete={index === activeIntroIndex ? () => handleIntroComplete(index) : undefined}
+              />
+            ))}
           </div>
 
           <div

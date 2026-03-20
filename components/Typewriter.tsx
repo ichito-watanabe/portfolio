@@ -1,18 +1,30 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type TypewriterProps = {
   text: string;
   speedMs?: number;
   className?: string;
+  onComplete?: () => void;
 };
 
-export function Typewriter({ text, speedMs = 70, className = "" }: TypewriterProps) {
+export function Typewriter({
+  text,
+  speedMs = 70,
+  className = "",
+  onComplete,
+}: TypewriterProps) {
   const [index, setIndex] = useState(0);
+  const completionNotifiedRef = useRef(false);
 
   useEffect(() => {
     if (index >= text.length) {
+      if (!completionNotifiedRef.current) {
+        completionNotifiedRef.current = true;
+        onComplete?.();
+      }
+
       return;
     }
 
@@ -21,14 +33,15 @@ export function Typewriter({ text, speedMs = 70, className = "" }: TypewriterPro
     }, speedMs);
 
     return () => window.clearTimeout(timer);
-  }, [index, speedMs, text]);
+  }, [index, onComplete, speedMs, text]);
 
-  const displayText = useMemo(() => text.slice(0, index), [index, text]);
+  const displayText = text.slice(0, index);
+  const isTyping = index < text.length;
 
   return (
     <p className={className}>
       <span>{displayText}</span>
-      <span className="ml-1 inline-block animate-pulse">|</span>
+      {isTyping ? <span className="ml-1 inline-block animate-pulse">|</span> : null}
     </p>
   );
 }
