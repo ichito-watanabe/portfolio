@@ -11,12 +11,19 @@ import { projectsByDateDesc } from "@/lib/projects";
 
 const introText = "Welcome to Ichito Portfolio";
 const profileImagePath = "/images/profile_img.png";
+const lastUpdatedAt = "2026-03-21";
 const MIN_IMAGE_SIZE = 80;
 const MAX_IMAGE_SIZE = 440;
 const HEADER_GAP = 16;
 const IMAGE_SCALE = 0.75;
 
 export default function Home() {
+  const lastUpdatedLabel = new Intl.DateTimeFormat("ja-JP", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }).format(new Date(lastUpdatedAt));
+
   const menuItems = projectsByDateDesc.map((project) => ({
     label: project.title,
     href: `/projects/${project.slug}`,
@@ -86,6 +93,12 @@ export default function Home() {
               className="object-cover"
             />
           </div>
+        </div>
+
+        <div className="mt-4 text-xs text-white/80 md:text-sm">
+          <span className="rounded border border-white/40 px-3 py-1">
+            最終更新日: {lastUpdatedLabel}
+          </span>
         </div>
 
         <p className="mt-4 text-sm md:text-base">Select a command to view each experience.</p>
