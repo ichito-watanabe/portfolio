@@ -13,7 +13,7 @@ const introTitle = "Welcome to Ichito Portfolio";
 const introProfileLines = [
   "出身地 ： 諏訪市",
   "大学 ： 長岡技術科学大学",
-  "趣味 ： ダンス，麻雀",
+  "趣味 ： ダンス， 音楽を聴くこと",
 ] as const;
 const introLines = [introTitle, ...introProfileLines] as const;
 const introWidthReference = introTitle;
