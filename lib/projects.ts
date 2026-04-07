@@ -376,7 +376,7 @@ export const projects: Project[] = [
       },
       {
         type: "text",
-        text: "僕はバックエンド担当として、FastAPIを用いたAPI設計と外部サービス連携を主に担当しました。IPアドレスから市区町村を推定する位置情報API、Google Pollen API、Google Geocoding API、Gemini 3 Flash APIを組み合わせて、ユーザー入力から出力までをつなぐ処理を実装しました。",
+        text: "僕はバックエンド担当として、FastAPIを用いたAPI設計と外部サービス連携を主に担当しました。IPアドレスから市区町村を推定する位置情報APIであるGoogle Geocoding API、市区町村情報から花粉指数を取得するAPIであるGoogle Pollen API、Gemini 3 Flash APIを組み合わせて、ユーザー入力から出力までをつなぐ処理を実装しました。",
       },
       {
         type: "text",
