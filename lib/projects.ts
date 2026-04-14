@@ -57,7 +57,7 @@ export const projects: Project[] = [
       {
         type: "text",
         text: "長岡には、工学部のみの長岡技術科学大学と、デザイン専門の公立大学である長岡造形大学という、性質の異なる大学があります。技術志向と表現志向という異なる文化に触れる中で、若者同士が横断的に交流できる場は少ないと感じました。そこで「ローカルの魅力に触れながら異なる価値観が交わる場をつくる」ことを目標に、友人とイベントを立ち上げました。",
-      }
+      },
       {
         type: "text",
         text: "実現に向けては、地元学生の感性を伝えることに重きを置き、2つの大学で創作活動などを行っていた学生に声をかけました。出店では、コーヒーのacacia coffeeさん、パンのあららさん、洋服のgeometryさん、アートとグッズのmegrolliさん、cirrusさん、11人のDJの皆さんにご協力いただきました。集客にはSNSと知人のネットワーク、また地元の飲食店などを回ってビラを置いてもらうことなどを行いました。",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
         type: "image",
         src: "/images/auspice_vol1_2.jpg",
         alt: "AUSPICE vol.1 sub image",
-      }
+      },
       {
         type: "text",
         text: "これはおいしそうなコーヒーを小窓から見る僕です。",
@@ -129,7 +129,7 @@ export const projects: Project[] = [
         type: "image",
         src: "/images/auspice_vol2_2.jpg",
         alt: "AUSPICE vol.2 sub image",
-      }
+      },
       {
         type: "text",
         text: "これは設営直後の風景。人きてくれるかな、うまくいくかな、って不安と期待でいっぱいでした！",
@@ -216,7 +216,7 @@ export const projects: Project[] = [
         type: "image",
         src: "/images/auspice_vol3_2.jpg",
         alt: "AUSPICE vol.3 sub image",
-      }
+      },
       {
         type: "text",
         text: "服を買ってご満悦の僕です。",
