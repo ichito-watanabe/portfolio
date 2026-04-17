@@ -137,7 +137,7 @@ export default function Home() {
         <section className="mt-8 border-t border-white/40 pt-4 space-y-3">
           <h2 className="text-base md:text-lg">自己紹介</h2>
           <p className="text-sm leading-relaxed md:text-base">
-            こんにちは！2025年3月現在、長岡技術科学大学4年です。春からそのまま大学院に進学します。
+            こんにちは！2026年4月現在、長岡技術科学大学大学院1年生，渡部一翔と申します！
           </p>
           <p className="text-sm leading-relaxed md:text-base">
             地元は長野県の諏訪市という場所で，幼少期からダンスを習っていました！
@@ -145,7 +145,7 @@ export default function Home() {
             そして現在では僕がその友人にもらったように周りの大切な人にも行動する「きっかけ」を生み出していきたいと思っています！
           </p>
           <p className="text-sm leading-relaxed md:text-base">
-            今はAIやLLM、自然言語処理を中心に勉強中です。コンペに出たり、長期インターンで点群による体積管理システムほとんど1人で要件定義から実装まで設計したり、
+            今はAIやLLM、自然言語処理を中心に勉強中です。自然言語のコンペに出たり、長期インターンで点群による体積管理システムほとんど1人で要件定義から実装まで設計したり、
             思いついたらとりあえず手を動かすタイプです。
           </p>
           <p className="text-sm leading-relaxed md:text-base">
