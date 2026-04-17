@@ -220,7 +220,7 @@ export const projects: Project[] = [
       },
       {
         type: "text",
-        text: "服を買ってご満悦の僕です。",
+        text: "服を買ってご満悦の僕です。笑",
       },
     ],
   },
